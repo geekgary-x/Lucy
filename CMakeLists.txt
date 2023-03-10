@@ -46,6 +46,10 @@ set(VENDORS_DIR ${CMAKE_SOURCE_DIR}/src/Vendors)
 # find vulkan
 find_package(Vulkan REQUIRED)
 
+# boost
+find_package(Boost 1.56 REQUIRED COMPONENTS
+               date_time filesystem iostreams)
+
 add_subdirectory(src)
 
 if(ENABLE_TEST)

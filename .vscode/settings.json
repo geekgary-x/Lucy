@@ -2,7 +2,8 @@
     "cmake.configureOnEdit": false,
     "cmake.configureArgs" : [
         "-DCMAKE_BUILD_TYPE=Debug",
-        "-DDEBUG_ARGUES=--gtest_filter="
+        "-DDEBUG_ARGUES=--gtest_filter=",
+        "-DBoost_INCLUDE_DIR=Z:/Program Files/boost_1_81_0",
     ],
     // "cmake.generator": "Ninja",
     "cmake.debugConfig": {

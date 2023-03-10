@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.19 FATAL_ERROR)
 
-project(AppName VERSION 0.1.0)
+project(Lucy VERSION 0.1.0)
 
 
 option(ENABLE_TEST "Enable google test" ON)
@@ -42,6 +42,9 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${${PROJECT_NAME}_ROOT_DIR}/out/bin)
 # vendors dir
 set(VENDORS_DIR ${CMAKE_SOURCE_DIR}/src/Vendors)
 
+
+# find vulkan
+find_package(Vulkan REQUIRED)
 
 add_subdirectory(src)
 

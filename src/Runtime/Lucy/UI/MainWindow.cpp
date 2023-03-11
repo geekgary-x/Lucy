@@ -22,7 +22,7 @@ namespace Lucy
 
 	MainWindow::MainWindow()
 	{
-		std::cout << "Lucy: hello world!" << std::endl;
+		std::cout << "Lucy: Hello world!" << std::endl;
 		glfwInit();
 
 		glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);

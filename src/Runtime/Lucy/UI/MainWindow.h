@@ -6,7 +6,7 @@ class GLFWwindow;
 
 namespace Lucy
 {
-	class MainWindow : boost::shared_ptr<MainWindow>
+	class MainWindow
 	{
 	public:
 		friend boost::shared_ptr<MainWindow> boost::make_shared<MainWindow>();

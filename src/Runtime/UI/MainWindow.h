@@ -2,6 +2,8 @@
 #include <boost/smart_ptr/shared_ptr.hpp>
 #include <boost/smart_ptr/make_shared.hpp>
 
+class GLFWwindow;
+
 namespace Lucy
 {
 	class MainWindow : boost::shared_ptr<MainWindow>
@@ -14,8 +16,10 @@ namespace Lucy
 		void loop();
 		~MainWindow();
 	private:
-		MainWindow() = default;
+		MainWindow();
 
 		static boost::shared_ptr<MainWindow> s_MainWindow;
+
+		GLFWwindow* m_GLFWwindow;
 	};
 }

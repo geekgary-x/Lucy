@@ -5,5 +5,7 @@ namespace LucyTest
 	namespace Vulkan
 	{
 		int VulkanInstanceInit();
+
+		int VulkanGraphicsDeviceInit();
 	}
 }

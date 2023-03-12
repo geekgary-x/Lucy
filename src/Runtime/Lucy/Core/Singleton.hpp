@@ -7,8 +7,6 @@ namespace Lucy
 	class Singleton
 	{
     public:
-        friend boost::shared_ptr<T> boost::make_shared<T>();
-    public:
         static boost::shared_ptr<T> getInstance(Args && ... args) noexcept
         {
             static boost::shared_ptr<T> instance = boost::make_shared<T>(boost::detail::sp_forward<Args>(args)...);

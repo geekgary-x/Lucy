@@ -2,10 +2,6 @@
 #include <Lucy/Vulkan/utils/utils-raii.hpp>
 namespace Lucy
 {
-    boost::shared_ptr<VulkanInstance> VulkanInstance::Create()
-    {
-        return boost::make_shared<VulkanInstance>();
-    }
     VulkanInstance::VulkanInstance()
 	{
         // the very beginning: instantiate a context

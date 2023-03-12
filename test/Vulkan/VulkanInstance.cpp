@@ -5,7 +5,7 @@ namespace LucyTest
 	{
 		int VulkanInstanceInit()
 		{
-			auto vulkanInstance = Lucy::VulkanInstance::Create();
+			auto vulkanInstance = Lucy::Singleton<Lucy::VulkanInstance>::getInstance();
 			return vulkanInstance != nullptr;
 		}
 	}

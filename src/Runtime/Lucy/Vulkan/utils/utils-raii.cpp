@@ -5,6 +5,16 @@ namespace vk
     {
         namespace su
         {
+            SurfaceData::SurfaceData(vk::raii::Instance const& instance, std::string const& windowName, vk::Extent2D const& extent_)
+                : extent(extent_), window(vk::su::createWindow(windowName, extent))
+            {
+                VkSurfaceKHR _surface;
+                VkResult     err = glfwCreateWindowSurface(static_cast<VkInstance>(*instance), window.handle, nullptr, &_surface);
+                if (err != VK_SUCCESS)
+                    throw std::runtime_error("Failed to create window!");
+                surface = vk::raii::SurfaceKHR(instance, _surface);
+            }
+
             vk::raii::DeviceMemory allocateDeviceMemory(vk::raii::Device const& device,
                 vk::PhysicalDeviceMemoryProperties const& memoryProperties,
                 vk::MemoryRequirements const& memoryRequirements,

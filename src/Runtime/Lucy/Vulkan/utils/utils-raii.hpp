@@ -235,19 +235,11 @@ namespace vk
 
       struct SurfaceData
       {
-        SurfaceData( vk::raii::Instance const & instance, std::string const & windowName, vk::Extent2D const & extent_ )
-          : extent( extent_ ), window( vk::su::createWindow( windowName, extent ) )
-        {
-          VkSurfaceKHR _surface;
-          VkResult     err = glfwCreateWindowSurface( static_cast<VkInstance>( *instance ), window.handle, nullptr, &_surface );
-          if ( err != VK_SUCCESS )
-            throw std::runtime_error( "Failed to create window!" );
-          surface = vk::raii::SurfaceKHR( instance, _surface );
-        }
+            SurfaceData(vk::raii::Instance const& instance, std::string const& windowName, vk::Extent2D const& extent_);
 
-        vk::Extent2D         extent;
-        vk::su::WindowData   window;
-        vk::raii::SurfaceKHR surface = nullptr;
+            vk::Extent2D         extent;
+            vk::su::WindowData   window;
+            vk::raii::SurfaceKHR surface = nullptr;
       };
 
       struct SwapChainData

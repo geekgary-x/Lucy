@@ -1,5 +1,16 @@
 #pragma once
 #include <Lucy/Core/Singleton.hpp>
+namespace vk
+{
+	namespace raii
+	{
+		namespace su
+		{
+			struct SurfaceData;
+		}
+	}
+}
+
 class GLFWwindow;
 namespace Lucy
 {
@@ -12,6 +23,6 @@ namespace Lucy
 		~MainWindow();
 	private:
 		MainWindow();
-		GLFWwindow* m_GLFWwindow;
+		boost::shared_ptr<vk::raii::su::SurfaceData> m_surface;
 	};
 }
